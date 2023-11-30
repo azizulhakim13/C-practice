@@ -1,61 +1,49 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
+﻿using System;
+using System.Xml;
 
 namespace HelloWorld
 {
-    class Program
+    class Hello
     {
         static void Main(string[] args)
         {
-            var num = 1;
-            byte number = 3;
-            int number2 = 11;
-            float totlaPrice = 20.5f;
+            Console.WriteLine("Hello World!");
+            int number;
+            number = 5;
+            float totalPrice = 20.5f;
+            const int MaxNum = 9;
             char character = 'A';
+            string firstname = "Azizul";
             bool isWorking = true;
-            const float pi = 3.14f;
 
-            //Type conversion
-            int i = 1;
-            byte b = (byte)i;
-
-            //Exception Handling
-            try
-            {
-                string str = "true";
-                bool c = Convert.ToBoolean(str);
-                Console.WriteLine(c);
-
-                string firstName = "1234";
-                byte A = Convert.ToByte(firstName);
-                Console.WriteLine(A);
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("The number couldn't converted to a byte");
-            }
-
-            Console.WriteLine(number2);
-            Console.WriteLine(b);
+            Console.WriteLine("{0} {1}", byte.MinValue, byte.MaxValue);
             Console.WriteLine("{0} {1}", float.MinValue, float.MaxValue);
 
-            // Operators
-            var x = 11;
-            var y = 6;
-            var z = 3;
-            Console.WriteLine((float)x / (float)y + (float)z);
-            Console.WriteLine(x > z && y > z);
+            //Implicit type casting
+            byte i = 100;
+            int j = i;
 
-            //Practice problem
-            int number1 = 7;
-            if (number1 % 2 == 0)
+            //Explivit type casting
+            j = 1000;
+            byte k = (byte)j;
+            Console.WriteLine(k);
+
+            //Type conversion
+            var num1 = "1234";
+            int num2 = Convert.ToInt32(num1);
+            Console.WriteLine(num2);
+
+            //Handling Exception
+            try
             {
-                Console.WriteLine("Even");
-            } else
-            {
-                Console.WriteLine("Odd");
+                var num3 = "2222";
+                byte a = Convert.ToByte(num3);
+                Console.WriteLine(a);
             }
-
+            catch (Exception ex)
+            {
+                Console.WriteLine("The number coudn't be converted to byte");
+            }   
         }
     }
 }
